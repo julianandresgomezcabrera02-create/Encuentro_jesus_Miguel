@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#04196E">
+  <title>Un mensaje para ti</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <button id="theme-toggle" class="switch" type="button" role="switch" aria-checked="false" aria-label="Modo claro">
+    <span class="knob"></span>
+  </button>
+
+  <main class="container">
+    <!-- 1. Estados de ánimo -->
+    <section id="home" class="screen">
+      <h1 id="title">¿Cómo te sientes hoy?</h1>
+      <p class="subtitle">Elige lo que hay en tu corazón.</p>
+      <div id="moods" class="grid" role="list"></div>
+      <p id="status" class="status" role="status">Cargando…</p>
+    </section>
+
+    <!-- 2. Dos opciones: versículos y canciones -->
+    <section id="choice" class="screen hidden">
+      <button id="back-home" class="back" type="button">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+        Volver
+      </button>
+      <h2 id="choice-title" class="screen-title"></h2>
+      <p class="subtitle">¿Qué quieres recibir?</p>
+      <div class="choices">
+        <button id="open-verses" class="glass choice" type="button">
+          <span class="emoji chip">📖</span>
+          <span class="choice-text">
+            <span class="choice-name">Versículos</span>
+            <span id="verses-count" class="choice-count"></span>
+          </span>
+          <svg class="chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
+        <button id="open-songs" class="glass choice" type="button">
+          <span class="emoji chip">🎵</span>
+          <span class="choice-text">
+            <span class="choice-name">Canciones</span>
+            <span id="songs-count" class="choice-count"></span>
+          </span>
+          <svg class="chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- 3. Lista (una tarjeta por versículo o canción) -->
+    <section id="list" class="screen hidden">
+      <button id="back-choice" class="back" type="button">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+        Volver
+      </button>
+      <h2 id="list-title" class="screen-title"></h2>
+      <div id="list-body" class="list"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
